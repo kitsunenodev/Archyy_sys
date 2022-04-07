@@ -37,19 +37,36 @@ void startdemon(){
     FILE* ficpid = fopen(TEMPOFIC, "w");
     fprintf(ficpid, "%d", pid );
     fclose(ficpid);
+
+    int nombre;
+    FILE* pipef;
+    char *path_fichier = "./tmp/pipe2.txt", chaine[50];
+    nombre = open(path_fichier, O_RDONLY);
+    pipef = fdopen(nombre,"r");
+    int nombre2;
+    FILE* pipef2;
+    char *path_fichier2 = "./tmp/pipe2.txt";
+    if(mkfifo(path_fichier2, 0644) != 0) /* création du fichier */
+    {
+        perror("Problème de création du noeud de tube");
+        exit(1);
+    }
+    nombre2 = open(path_fichier2, O_WRONLY);
+    pipef2 = fdopen(nombre2,"r");
     while (69){
-        int nombre;
-        FILE* mon_fichier = fopen("pipe", "r");
-        char* path_monfichier = "./tmp/pipe.txt";
-        char chaine[50];
-        nombre = open(path_monfichier, O_RDONLY); // ouverture du tube 
-        mon_fichier = fdopen(nombre, "r"); // ouverture du flot 
-        if (fscanf(mon_fichier, "%s", chaine)){ // lecture dans le flot 
-            printf("%s\n",chaine); // affichage 
-            exit(0);
+        fscanf(pipef,"%s", chaine);
+        if(strcmp(chaine, "date") == 0){
+        fprintf(pipef2, "test\n");
+        unlink(path_fichier2);
         }
-        fscanf(mon_fichier, "%s", chaine);
-        unlink(path_monfichier); // fermeture du flot
-        printf("69\n");
+        if(strcmp(chaine, "timer") == 0){
+
+        }
+        if(strcmp(chaine, "reset") == 0){
+
+        }
+
+
+
     }
 }
