@@ -16,6 +16,11 @@ int main(int argc,char* argv[]){
     }
     else{
         if(!strcmp(argv[1], "--start")){
+            if (isalive()){
+                printf("Le demon est deja demarré");
+                exit(-1)
+            }
+            if (mkfifo)
             startdemon();
             exit(0);
         }
@@ -36,38 +41,36 @@ int main(int argc,char* argv[]){
             exit(0);
         }
         if(!strcmp(argv[1] , "--date")){
-            int nombre;
-            FILE* pipef;
-            char* path_fichier = "./tmp/pipe.txt";
-            if(mkfifo(path_fichier, 0644) != 0) /* création du fichier */
-            {
-                perror("Problème de création du noeud de tube");
-                exit(1);
-            }
-            nombre = open(path_fichier, O_WRONLY);
-            pipef = fdopen(nombre, "w");
-            fprintf(pipef,"date\n");
-            unlink(path_fichier);
-            int nombre2;
-            FILE* pipef2;
-            char *path_fichier2 = "./tmp/pipe2.txt", chaine[50];
-            nombre2 = open(path_fichier2, O_RDONLY);
-            pipef2 = fdopen(nombre2, "r");
-            fscanf(pipef2,"%s", chaine);
-            while (strcmp(chaine, "date") == 0){
-                fscanf(pipef2,"%s", chaine);
-            }
-            printf("%s", chaine);
-            unlink(path_fichier2);
-            nombre = open(path_fichier, O_WRONLY);
-            pipef = fdopen(nombre, "w");
-            fprintf(pipef,"0\n");
+            int wr_invoc = open(INVOCTOD, O_WRONLY);
+            FILE* f_wr_invoc = fdopen(wr_invoc, "w");
+            fprintf(f_wr_invoc, "date");
+            int rd_invoc = open(DTOINVOC, O_RDONLY);
+            FILE* f_rd_invoc = fdopen(rd_invoc, "r");
+            char rd_value[BUFFER];
+            fscanf(f_rd_invoc, "%s", rd_value);
+            fclose(f_rd_invoc);
+            close(rd_invoc);
+            printf("%s\n", rd_value);
             exit(0);
         }
         if(!strcmp(argv[1] , "--timer")){
+            int wr_invoc = open(INVOCTOD, O_WRONLY);
+            FILE* f_wr_invoc = fdopen(wr_invoc, "w");
+            fprintf(f_wr_invoc, "timer");
+            int rd_invoc = open(DTOINVOC, O_RDONLY);
+            FILE* f_rd_invoc = fdopen(rd_invoc, "r");
+            char rd_value[BUFFER];
+            fscanf(f_rd_invoc, "%s", rd_value);
+            fclose(f_rd_invoc);
+            close(rd_invoc);
+            printf("%s\n", rd_value);
             exit(0);
         }
         if(!strcmp(argv[1] , "--resettimer")){
+            int wr_invoc = open(INVOCTOD, O_WRONLY);
+            FILE* f_wr_invoc = fdopen(wr_invoc, "w");
+            fprintf(f_wr_invoc, "reset");
+            printf("Timer reset\n");
             exit(0);
         }
         else{
