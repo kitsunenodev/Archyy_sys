@@ -35,11 +35,19 @@ int main(int argc,char* argv[]){
             help();
             exit(0);
         }
+        if(!strcmp(argv[1] , "--date")){
+            exit(0);
+        }
+        if(!strcmp(argv[1] , "--timer")){
+            exit(0);
+        }
+        if(!strcmp(argv[1] , "--resettimer")){
+            exit(0);
+        }
         else{
         printf("bad argument type --help for more informations\n");
         exit(-1);
         }
     }
-    
     return 0;
 }
