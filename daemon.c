@@ -11,6 +11,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <time.h>
 
 
 void startdemon(){
@@ -42,18 +43,39 @@ void startdemon(){
         perror("Erreur lors de la creation du pipe");
         exit(-1);
     }
-    nombre2 = open(path_fichier2, O_WRONLY);
-    pipef2 = fdopen(nombre2,"r");
-    while (666)
-    {
-        fscanf(pipef,"%s", chaine);
-        if(strcmp(chaine, "date") == 0){
-        fprintf(pipef2, "test\n");
-        unlink(path_fichier2);
+    if(mkfifo(DTOINVOC, 0644) != 0){
+        perror("Erreur lors de la creation du pipe");
+        unlink(INVOCTOD);
+        exit(-1);
+    }
+    int rd_daemon = open(INVOCTOD, O_RDONLY);
+    FILE* f_rd_daemon = fdopen(rd_daemon, "r");
+    char rd_value[BUFFER];
+    time_t clock = time(NULL)
+    while (69){
+        fscanf(f_rd_daemon, "%s", rd_value);
+        if(strcmp(rd_value, "date") == 0){
+            int wr_daemon = open(DTOINVOC, O_WRONLY);
+            FILE* f_wr_daemon = fopen(wr_daemon, "w");
+            time_t currentdate= time(NULL);
+            struct tm date = *localtime(&currentdate);
+            fprintf(f_wr_daemon, "%d/%d/%d", date.tm_mday, date.tm_mon+1, date.tm_year + 1900);
+            fclose(f_wr_daemon);
+            close(wr_daemon);
         }
-        if(strcmp(chaine, "timer") == 0){
+        if(strcmp(rd_value, "timer") == 0){
+            int wr_daemon = open(DTOINVOC, O_WRONLY);
+            FILE* f_wr_daemon = fopen(wr_daemon, "w");
+            fprintf(f_wr_daemon, "%ld", time(NULL) - clock);
+            fclose(f_wr_daemon);
+            close(wr_daemon);
+
         }
-        if(strcmp(chaine, "reset") == 0){
+        if(strcmp(rd_value, "reset") == 0){
+            clock = time(NULL);
         }
+
+
+
     }
 }
