@@ -11,7 +11,7 @@
 int main(int argc,char* argv[]){
 
     if(argc != 2){
-        printf("./invocateur <argument>");
+        printf("Erreur, le nombre d'argument est incorect");
         exit(-1);
     }
     if(!strcmp(argv[1], "--start")){
@@ -24,7 +24,10 @@ int main(int argc,char* argv[]){
         restart();
     }
     if(!strcmp(argv[1] , "--state")){
-        printf("state");
+        state();
+    }
+    if(!strcmp(argv[1] , "--help")){
+        help();
     }
     return 0;
 }

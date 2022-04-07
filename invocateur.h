@@ -14,5 +14,7 @@ int isalive();
 
 void restart();
 
+void state();
+
 #endif //ARCHI_SYS_INVOCATEUR_H
 

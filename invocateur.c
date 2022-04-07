@@ -22,7 +22,6 @@ void stop(){ //recherche le pid du daemon dans un fichier et viens le tuer.
         FILE *pidfic = fopen(TEMPOFIC, "r");
         fclose(pidfic);
         int pid;
-        //mettre un scan f qui defini pid
         kill(pid, SIGKILL);
         remove(TEMPOFIC);
     }
@@ -35,4 +34,11 @@ int isalive(){ //fonction qui retourne 0 si daemon est mort
 void restart(){ //redémare le daemon
     stop();
     startdemon();
+}
+void state(){
+    if(isalive()){
+        printf("Demarré\n");
+    } else{
+        printf("éteint\n");
+    }
 }
