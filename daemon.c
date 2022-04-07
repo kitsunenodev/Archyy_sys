@@ -36,46 +36,48 @@ void startdemon(){
         exit(0);
     }
     FILE* ficpid = fopen(TEMPOFIC, "w");
-    fprintf(ficpid, "%d", pid );
+    fprintf(ficpid, "%d", getpid());
     fclose(ficpid);
 
     if(mkfifo(INVOCTOD, 0644) != 0){
         perror("Erreur lors de la creation du pipe");
         exit(-1);
     }
-    if(mkfifo(DTOINVOC, 0644) != 0){
-        perror("Erreur lors de la creation du pipe");
-        unlink(INVOCTOD);
-        exit(-1);
-    }
-    int rd_daemon = open(INVOCTOD, O_RDONLY);
-    FILE* f_rd_daemon = fdopen(rd_daemon, "r");
+
     char rd_value[BUFFER];
     time_t clock = time(NULL);
+    int nb_reset = 0;
     while (69){
-        fscanf(f_rd_daemon, "%s", rd_value);
+        int rd_daemon = open(INVOCTOD, O_RDONLY);
+        read(rd_daemon, rd_value, BUFFER);
+        close(rd_daemon);
         if(strcmp(rd_value, "date") == 0){
-            int wr_daemon = open(DTOINVOC, O_WRONLY);
-            FILE* f_wr_daemon = fdopen(wr_daemon, "w");
+            int wr_daemon = open(INVOCTOD, O_WRONLY);
             time_t currentdate= time(NULL);
             struct tm date = *localtime(&currentdate);
-            fprintf(f_wr_daemon, "%d/%d/%d", date.tm_mday, date.tm_mon+1, date.tm_year + 1900);
-            fclose(f_wr_daemon);
+            char value[BUFFER];
+            sprintf(value, "%d/%d/%d", date.tm_mday, date.tm_mon+1, date.tm_year + 1900);
+            write(wr_daemon, value, BUFFER);
             close(wr_daemon);
         }
         if(strcmp(rd_value, "timer") == 0){
-            int wr_daemon = open(DTOINVOC, O_WRONLY);
-            FILE* f_wr_daemon = fdopen(wr_daemon, "w");
-            fprintf(f_wr_daemon, "%ld", time(NULL) - clock);
-            fclose(f_wr_daemon);
+            int wr_daemon = open(INVOCTOD, O_WRONLY);
+            char value[BUFFER];
+            sprintf(value, "%ld", time(NULL) - clock);
+            write(wr_daemon, value, BUFFER);
             close(wr_daemon);
 
         }
         if(strcmp(rd_value, "reset") == 0){
             clock = time(NULL);
+            nb_reset++;
         }
-
-
-
+        if(strcmp(rd_value, "nbreset") == 0){
+            int wr_daemon = open(INVOCTOD, O_WRONLY);
+            char value[BUFFER];
+            sprintf(value, "%d", nb_reset);
+            write(wr_daemon, value, BUFFER);
+            close(wr_daemon);
+        }
     }
 }

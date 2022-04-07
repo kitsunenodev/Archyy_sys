@@ -14,6 +14,3 @@ clean:
 	rm *.o
 
 build: programme clean
-
-execute: programme clean
-	./programme

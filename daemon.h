@@ -6,7 +6,7 @@
 #define TEMPOFIC "/tmp/pid.txt"
 #define BUFFER 50
 #define INVOCTOD "/tmp/command.txt"
-#define DTOINVOC "/tmp/response.txt"
+
 
 void startdemon();
 
