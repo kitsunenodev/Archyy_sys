@@ -17,3 +17,6 @@ arguments:
 
 --resettimer	reset the timer
 
+--nombrereset	 show how many time the timer of the actual instance of the daemon has been reset
+
+
