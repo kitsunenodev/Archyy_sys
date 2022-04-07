@@ -38,6 +38,8 @@ void startdemon(){
     FILE* ficpid = fopen(TEMPOFIC, "w");
     fprintf(ficpid, "%d", pid );
     fclose(ficpid);
+
+
     if(mkfifo(INVOCTOD, 0644) != 0){
         perror("Erreur lors de la creation du pipe");
         exit(-1);
