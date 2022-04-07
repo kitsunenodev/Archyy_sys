@@ -35,10 +35,10 @@ void restart(){ //redémare le daemon
     stop();
     startdemon();
 }
-void state(){
+void state(){ //fontion qui fait apparaitre l'état du daémon
     if(isalive()){
-        printf("Demarré\n");
+        printf("Votre Daemon est Demarré\n");
     } else{
-        printf("éteint\n");
+        printf("Votre Daemon est éteint\n");
     }
 }
