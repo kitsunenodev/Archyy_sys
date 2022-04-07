@@ -1,4 +1,4 @@
-programme: ../projet/main.o daemon.o invocateur.o
+programme: main.o daemon.o invocateur.o
 	gcc -o programme main.o daemon.o invocateur.o
 
 main.o: main.c
@@ -7,8 +7,9 @@ main.o: main.c
 daemon.o: daemon.c
 	gcc -c daemon.c
 
-invcateur.o:invocateur.c
-	gcc -c invoateur.c
+invocateur.o: invocateur.c
+	gcc -c invocateur.c
+
 clean:
 	rm *.o
 

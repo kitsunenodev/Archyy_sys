@@ -5,6 +5,8 @@
 #include "invocateur.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <signal.h>
 #include "daemon.h"
 void help(){
     printf("WALLA TU TE DEMERDE FRERE\n");
@@ -12,10 +14,11 @@ void help(){
 void stop(){
     if (isalive()) {
         FILE *pidfic = fopen(TEMPOFIC, "r");
-
-        fclose(pidfic);
-        kill(pid, SIGKILL);
-        remove(TEMPOFIC);
+         int pid;
+         fscanf(pidfic, "%d", &pid);
+         fclose(pidfic);
+         kill(pid, SIGKILL);
+         remove(TEMPOFIC);
     }
 }
 
