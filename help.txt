@@ -1,0 +1,19 @@
+Daemon Help
+arguments:
+
+--help		show this message
+
+--start		lunch the daemon and print something
+
+--stop		kill the daemon
+
+--restart	kill and lunch the daemon
+
+--state		print the curent state of the daemon [
+
+--date		print the curent date
+
+--timer		set a timer and show it
+
+--resettimer	reset the timer
+
