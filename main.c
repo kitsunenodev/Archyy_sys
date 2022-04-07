@@ -17,10 +17,9 @@ int main(int argc,char* argv[]){
     else{
         if(!strcmp(argv[1], "--start")){
             if (isalive()){
-                printf("Le demon est deja demarré");
-                exit(-1)
+                printf("Le demon est deja demarré\n");
+                exit(-1);
             }
-            if (mkfifo)
             startdemon();
             exit(0);
         }
