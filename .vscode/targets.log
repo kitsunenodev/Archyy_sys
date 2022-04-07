@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Apr  7 12:01:14 2022
+# Make data base, printed on Thu Apr  7 17:35:49 2022
 
 # Variables
 
@@ -15,7 +15,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up
+WSLENV = ELECTRON_RUN_AS_NODE/w:
 # default
 .SHELLFLAGS := -c
 # environment
@@ -33,7 +33,7 @@ SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"4c452206e4c4c2c75a452aec147848cb.fr","_translationsConfigFile":"/home/pire/.vscode-server/data/clp/4c452206e4c4c2c75a452aec147848cb.fr/tcf.json","_cacheRoot":"/home/pire/.vscode-server/data/clp/4c452206e4c4c2c75a452aec147848cb.fr","_resolvedLanguagePackCoreLocation":"/home/pire/.vscode-server/data/clp/4c452206e4c4c2c75a452aec147848cb.fr/e18005f0f1b33c29e81d732535d8c0e47cafb0b5","_corruptedFile":"/home/pire/.vscode-server/data/clp/4c452206e4c4c2c75a452aec147848cb.fr/corrupted.info","_languagePackSupport":true}
 # environment
-_ = /home/pire/.vscode-server/bin/e18005f0f1b33c29e81d732535d8c0e47cafb0b5/node
+_ = /mnt/c/Users/pierr/AppData/Local/Programs/Microsoft VS Code/bin/code
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # 'override' directive
@@ -49,11 +49,11 @@ VSCODE_CWD = /mnt/c/Users/pierr/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/pire/.vscode-server/bin/e18005f0f1b33c29e81d732535d8c0e47cafb0b5/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/Python310/Scripts/:/mnt/c/Program Files/Python310/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/ProgramData/ComposerSetup/bin:/mnt/c/Program Files/Symfony:/mnt/d/Git/cmd:/mnt/c/Users/pierr/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/Program Files/Graphviz/bin:/mnt/c/Program Files/Graphviz:/mnt/c/Users/pierr/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/pierr/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/pierr/AppData/Local/gitkraken/bin:/mnt/c/laragon/bin/php/php-8.1.1-nts-Win32-vs16-x64:/mnt/c/Users/pierr/AppData/Roaming/Composer/vendor/bin:/mnt/c/Program Files/JetBrains/CLion 2021.3.4/bin:/snap/bin
+PATH = /home/pire/.vscode-server/bin/e18005f0f1b33c29e81d732535d8c0e47cafb0b5/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu20.04onWindows_2004.2022.8.0_x64__79rhkp1fndgsc:/mnt/c/Program Files/Python310/Scripts/:/mnt/c/Program Files/Python310/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/ProgramData/ComposerSetup/bin:/mnt/c/Program Files/Symfony:/mnt/d/Git/cmd:/mnt/c/Users/pierr/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/Program Files/Graphviz/bin:/mnt/c/Program Files/Graphviz:/mnt/c/Users/pierr/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/pierr/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/pierr/AppData/Local/gitkraken/bin:/mnt/c/laragon/bin/php/php-8.1.1-nts-Win32-vs16-x64:/mnt/c/Users/pierr/AppData/Roaming/Composer/vendor/bin:/mnt/c/Program Files/JetBrains/CLion 2021.3.4/bin:/snap/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-c8a54af3-f36a-4992-91e1-dbee5d6e23ec.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-d865d57c-f116-4732-bee5-8faf9b552015.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -75,7 +75,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = pire
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -87,7 +87,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 0
+SHLVL = 1
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -95,7 +95,7 @@ USER = pire
 # makefile
 .DEFAULT_GOAL := programme
 # environment
-NAME = Pire-Laptop
+NAME = Code
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -149,9 +149,9 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Directories
 
-# . (device 2, inode 2533274790480717): 11 files, no impossibilities.
+# . (device 2, inode 30117822508048753): 12 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -178,12 +178,6 @@ main.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-../projet/main.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 daemon.o: daemon.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -194,7 +188,7 @@ daemon.o: daemon.c
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-07 11:53:08.1018892
+#  Last modified 2022-04-07 17:32:44.6646528
 #  File has been updated.
 #  Successfully updated.
 
@@ -207,10 +201,10 @@ execute: programme clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 18):
+#  recipe to execute (from 'makefile', line 19):
 	./programme
 
-programme: ../projet/main.o daemon.o invocateur.o
+programme: main.o daemon.o invocateur.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -227,7 +221,7 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 13):
+#  recipe to execute (from 'makefile', line 14):
 	rm *.o
 
 # Not a target:
@@ -236,11 +230,12 @@ daemon.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-invocateur.o:
+invocateur.o: invocateur.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  recipe to execute (from 'makefile', line 11):
+	gcc -c invocateur.c
 
 main.o: main.c
 #  Implicit rule search has not been done.
@@ -249,28 +244,21 @@ main.o: main.c
 #  recipe to execute (from 'makefile', line 5):
 	gcc -c main.c
 
-invcateur.o: invocateur.c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 11):
-	gcc -c invoateur.c
-
 # files hash-table stats:
-# Load=16/1024=2%, Rehash=0, Collisions=0/37=0%
+# Load=14/1024=1%, Rehash=0, Collisions=0/37=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 25 / storage = 231 B / avg = 9 B
-# current buf: size = 8162 B / used = 231 B / count = 25 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 23 / storage = 202 B / avg = 8 B
+# current buf: size = 8162 B / used = 202 B / count = 23 / avg = 8 B
 
-# strcache performance: lookups = 44 / hit rate = 43%
+# strcache performance: lookups = 45 / hit rate = 48%
 # hash-table stats:
-# Load=25/8192=0%, Rehash=0, Collisions=1/44=2%
-# Finished Make data base on Thu Apr  7 12:01:14 2022
+# Load=23/8192=0%, Rehash=0, Collisions=1/45=2%
+# Finished Make data base on Thu Apr  7 17:35:49 2022
 
  
 make: *** No rule to make target 'all'.  Stop.
