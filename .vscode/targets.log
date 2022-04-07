@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Apr  7 11:56:16 2022
+# Make data base, printed on Thu Apr  7 12:01:14 2022
 
 # Variables
 
@@ -15,7 +15,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = ELECTRON_RUN_AS_NODE/w:
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # default
 .SHELLFLAGS := -c
 # environment
@@ -33,7 +33,7 @@ SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"4c452206e4c4c2c75a452aec147848cb.fr","_translationsConfigFile":"/home/pire/.vscode-server/data/clp/4c452206e4c4c2c75a452aec147848cb.fr/tcf.json","_cacheRoot":"/home/pire/.vscode-server/data/clp/4c452206e4c4c2c75a452aec147848cb.fr","_resolvedLanguagePackCoreLocation":"/home/pire/.vscode-server/data/clp/4c452206e4c4c2c75a452aec147848cb.fr/e18005f0f1b33c29e81d732535d8c0e47cafb0b5","_corruptedFile":"/home/pire/.vscode-server/data/clp/4c452206e4c4c2c75a452aec147848cb.fr/corrupted.info","_languagePackSupport":true}
 # environment
-_ = /mnt/c/Users/pierr/AppData/Local/Programs/Microsoft VS Code/bin/code
+_ = /home/pire/.vscode-server/bin/e18005f0f1b33c29e81d732535d8c0e47cafb0b5/node
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # 'override' directive
@@ -49,11 +49,11 @@ VSCODE_CWD = /mnt/c/Users/pierr/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/pire/.vscode-server/bin/e18005f0f1b33c29e81d732535d8c0e47cafb0b5/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu20.04onWindows_2004.2022.8.0_x64__79rhkp1fndgsc:/mnt/c/Program Files/Python310/Scripts/:/mnt/c/Program Files/Python310/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/ProgramData/ComposerSetup/bin:/mnt/c/Program Files/Symfony:/mnt/d/Git/cmd:/mnt/c/Users/pierr/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/Program Files/Graphviz/bin:/mnt/c/Program Files/Graphviz:/mnt/c/Users/pierr/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/pierr/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/pierr/AppData/Local/gitkraken/bin:/mnt/c/laragon/bin/php/php-8.1.1-nts-Win32-vs16-x64:/mnt/c/Users/pierr/AppData/Roaming/Composer/vendor/bin:/mnt/c/Program Files/JetBrains/CLion 2021.3.4/bin:/snap/bin
+PATH = /home/pire/.vscode-server/bin/e18005f0f1b33c29e81d732535d8c0e47cafb0b5/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/Python310/Scripts/:/mnt/c/Program Files/Python310/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/ProgramData/ComposerSetup/bin:/mnt/c/Program Files/Symfony:/mnt/d/Git/cmd:/mnt/c/Users/pierr/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/Program Files/Graphviz/bin:/mnt/c/Program Files/Graphviz:/mnt/c/Users/pierr/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/pierr/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/pierr/AppData/Local/gitkraken/bin:/mnt/c/laragon/bin/php/php-8.1.1-nts-Win32-vs16-x64:/mnt/c/Users/pierr/AppData/Roaming/Composer/vendor/bin:/mnt/c/Program Files/JetBrains/CLion 2021.3.4/bin:/snap/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-25a4f6d7-490e-45f1-a003-b0f97a10cdb5.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-c8a54af3-f36a-4992-91e1-dbee5d6e23ec.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -87,7 +87,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 1
+SHLVL = 0
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -95,7 +95,7 @@ USER = pire
 # makefile
 .DEFAULT_GOAL := programme
 # environment
-NAME = Code
+NAME = Pire-Laptop
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -140,10 +140,8 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu-20.04
-# environment
-MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=66/1024=6%, Rehash=0, Collisions=4/91=4%
+# Load=65/1024=6%, Rehash=0, Collisions=4/90=4%
 
 # Pattern-specific Variable Values
 
@@ -272,7 +270,7 @@ invcateur.o: invocateur.c
 # strcache performance: lookups = 44 / hit rate = 43%
 # hash-table stats:
 # Load=25/8192=0%, Rehash=0, Collisions=1/44=2%
-# Finished Make data base on Thu Apr  7 11:56:16 2022
+# Finished Make data base on Thu Apr  7 12:01:14 2022
 
  
 make: *** No rule to make target 'all'.  Stop.

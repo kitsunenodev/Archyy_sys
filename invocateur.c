@@ -3,30 +3,36 @@
 //
 
 #include "invocateur.h"
+#include <string.h>
+#include <unistd.h>
+#include <string.h>
+#include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include <signal.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
 #include "daemon.h"
-void help(){
+void help(){ //fonction qui fait apparaitre l'aide dans le terminal
     printf("WALLA TU TE DEMERDE FRERE\n");
-}
-void stop(){
+} 
+void stop(){ //recherche le pid du daemon dans un fichier et viens le tuer.
     if (isalive()) {
         FILE *pidfic = fopen(TEMPOFIC, "r");
-         int pid;
-         fscanf(pidfic, "%d", &pid);
-         fclose(pidfic);
-         kill(pid, SIGKILL);
-         remove(TEMPOFIC);
+        fclose(pidfic);
+        int pid;
+        //mettre un scan f qui defini pid
+        kill(pid, SIGKILL);
+        remove(TEMPOFIC);
     }
 }
 
-int isalive(){
+int isalive(){ //fonction qui retourne 0 si daemon est mort 
     return !access(TEMPOFIC, F_OK);
 }
 
-void restart(){
+void restart(){ //redémare le daemon
     stop();
     startdemon();
 }

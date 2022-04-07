@@ -13,7 +13,6 @@
 #include <sys/wait.h>
 
 
-
 void startdemon(){
     pid_t pid= fork();
     if(pid == -1) {
@@ -38,7 +37,7 @@ void startdemon(){
     FILE* ficpid = fopen(TEMPOFIC, "w");
     fprintf(ficpid, "%d", pid );
     fclose(ficpid);
-    while (69420){
+    while (69){
 
     }
 }
