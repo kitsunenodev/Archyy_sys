@@ -40,16 +40,16 @@ void startdemon(){
     while (69){
         int nombre;
         FILE* mon_fichier = fopen("pipe", "r");
-        char* path_monfichier = "./pipe.txt";
+        char* path_monfichier = "./tmp/pipe.txt";
         char chaine[50];
         nombre = open(path_monfichier, O_RDONLY); // ouverture du tube 
         mon_fichier = fdopen(nombre, "r"); // ouverture du flot 
         if (fscanf(mon_fichier, "%s", chaine)){ // lecture dans le flot 
-            puts(chaine); // affichage 
+            printf("%s\n",chaine); // affichage 
+            exit(0);
         }
         fscanf(mon_fichier, "%s", chaine);
         unlink(path_monfichier); // fermeture du flot
         printf("69\n");
-        exit(0);
     }
 }

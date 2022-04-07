@@ -16,6 +16,21 @@
 #include "daemon.h"
 void help(){ //fonction qui fait apparaitre l'aide dans le terminal
     printf("WALLA TU TE DEMERDE FRERE\n");
+    //ici test de tube només
+    int nombre;
+    FILE* mon_fichier = fopen("pipe", "r");
+    char* path_monfichier = "./tmp/pipe.txt";
+    if(mkfifo(path_monfichier, 0644) != 0)
+    {
+    perror("Problème de création du noeud de tube");
+    exit(1);
+    }
+    nombre = open(path_monfichier, O_WRONLY);
+    mon_fichier = fdopen(nombre,"w");
+    fprintf(mon_fichier,"coucou\n");
+    unlink(path_monfichier);
+    exit(0);
+    //fin test
 } 
 void stop(){ //recherche le pid du daemon dans un fichier et viens le tuer.
     if (isalive()) {

@@ -35,6 +35,14 @@ int main(int argc,char* argv[]){
             help();
             exit(0);
         }
+        if(!strcmp(argv[1] , "--duration")){
+            printf("cela fait <insert> temp que monsieur est allumé\n");
+            exit(0);
+        }
+        if(!strcmp(argv[1] , "--reset")){
+            printf("reset complete lol\n");
+            exit(0);
+        }
         else{
         printf("bad argument type --help for more informations\n");
         exit(-1);

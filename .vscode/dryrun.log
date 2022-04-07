@@ -1,8 +1,8 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/pire/Architecture_Systeme/Archyy_sys'
+gcc -c main.c
 gcc -c daemon.c
-cc    -c -o invocateur.o invocateur.c
+gcc -c invocateur.c
+gcc -o programme main.o daemon.o invocateur.o
 make: Leaving directory '/home/pire/Architecture_Systeme/Archyy_sys'
  
-make: *** No rule to make target '../projet/main.o', needed by 'programme'.
-
