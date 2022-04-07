@@ -38,19 +38,10 @@ void startdemon(){
     fprintf(ficpid, "%d", pid );
     fclose(ficpid);
 
-    int nombre;
-    FILE* pipef;
-    char *path_fichier = "./tmp/pipe2.txt", chaine[50];
-    printf("%d",access(path_fichier,F_OK));
-    nombre = open(path_fichier, O_RDONLY);
-    pipef = fdopen(nombre,"r");
-    int nombre2;
-    FILE* pipef2;
-    char *path_fichier2 = "./tmp/pipe2.txt";
-    if(mkfifo(path_fichier2, 0644) != 0) /* création du fichier */
-    {
-        perror("Problème de création du noeud de tube");
-        exit(1);
+
+    if(mkfifo(INVOCTOD, 0644) != 0){
+        perror("Erreur lors de la creation du pipe");
+        exit(-1);
     }
     nombre2 = open(path_fichier2, O_WRONLY);
     pipef2 = fdopen(nombre2,"r");
