@@ -4,6 +4,9 @@
 #ifndef ARCHI_SYS_DEAMON_H
 #define ARCHI_SYS_DEAMON_H
 #define TEMPOFIC "/tmp/pid.txt"
+#define BUFFER 50
+#define  INVOCTOD "./tmp/command"
+#define DTOINVOC "./tmp/response"
 
 void startdemon();
 
