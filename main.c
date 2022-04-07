@@ -41,42 +41,19 @@ int main(int argc,char* argv[]){
             exit(0);
         }
         if(!strcmp(argv[1] , "--date")){
-            int wr_invoc = open(INVOCTOD, O_WRONLY);
-            write(wr_invoc, "date", BUFFER);
-            close(wr_invoc);
-            int rd_invoc = open(INVOCTOD, O_RDONLY);
-            char rd_value[BUFFER];
-            read(rd_invoc, rd_value, BUFFER);
-            close(rd_invoc);
-            printf("%s\n", rd_value);
+           date();
             exit(0);
         }
         if(!strcmp(argv[1] , "--timer")){
-            int wr_invoc = open(INVOCTOD, O_WRONLY);
-            write(wr_invoc, "timer", BUFFER);
-            close(wr_invoc);
-            int rd_invoc = open(INVOCTOD, O_RDONLY);
-            char rd_value[BUFFER];
-            read(rd_invoc, rd_value, BUFFER);
-            close(rd_invoc);
-            printf("%s\n", rd_value);
+            timer();
             exit(0);
         }
         if(!strcmp(argv[1] , "--resettimer")){
-            int wr_invoc = open(INVOCTOD, O_WRONLY);
-            write(wr_invoc, "reset", BUFFER);
-            close(wr_invoc);
+            resettimer();
             exit(0);
         }
         if(!strcmp(argv[1] , "--nombrereset")){
-            int wr_invoc = open(INVOCTOD, O_WRONLY);
-            write(wr_invoc, "nbreset", BUFFER);
-            close(wr_invoc);
-            int rd_invoc = open(INVOCTOD, O_RDONLY);
-            char rd_value[BUFFER];
-            read(rd_invoc, rd_value, BUFFER);
-            close(rd_invoc);
-            printf("%s\n", rd_value);
+            nombrerest();
             exit(0);
         }
         else{

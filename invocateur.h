@@ -14,5 +14,13 @@ int isalive();
 
 void state();
 
+void date();
+
+void timer();
+
+void resettimer();
+
+void nombrerest();
+
 #endif //ARCHI_SYS_INVOCATEUR_H
 

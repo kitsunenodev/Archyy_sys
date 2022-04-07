@@ -14,14 +14,18 @@
 #include <sys/wait.h>
 #include <signal.h>
 #include "daemon.h"
+
 void help(){
-    printf("--help\t\tshow this message\n"
+    printf("Daemon Help\n"
+           "arguments:\n"
            "\n"
-           "--start\t\tlunch the daemon and print something\n"
+           "--help\t\tshow this message\n"
+           "\n"
+           "--start\t\tlaunch the daemon and print something\n"
            "\n"
            "--stop\t\tkill the daemon\n"
            "\n"
-           "--restart\tkill and lunch the daemon\n"
+           "--restart\tkill and launch the daemon\n"
            "\n"
            "--state\t\tprint the curent state of the daemon [\n"
            "\n"
@@ -58,4 +62,41 @@ void state(){ //fontion qui fait apparaitre l'état du daemon
     } else{
         printf("Votre Daemon est éteint\n");
     }
+}
+
+void date(){
+    int wr_invoc = open(INVOCTOD, O_WRONLY);
+    write(wr_invoc, "date", BUFFER);
+    close(wr_invoc);
+    int rd_invoc = open(INVOCTOD, O_RDONLY);
+    char rd_value[BUFFER];
+    read(rd_invoc, rd_value, BUFFER);
+    close(rd_invoc);
+    printf("%s\n", rd_value);
+}
+
+void timer(){
+    int wr_invoc = open(INVOCTOD, O_WRONLY);
+    write(wr_invoc, "timer", BUFFER);
+    close(wr_invoc);
+    int rd_invoc = open(INVOCTOD, O_RDONLY);
+    char rd_value[BUFFER];
+    read(rd_invoc, rd_value, BUFFER);
+    close(rd_invoc);
+    printf("%s\n", rd_value);
+}
+void resettimer(){
+    int wr_invoc = open(INVOCTOD, O_WRONLY);
+    write(wr_invoc, "reset", BUFFER);
+    close(wr_invoc);
+}
+void nombrerest(){
+    int wr_invoc = open(INVOCTOD, O_WRONLY);
+    write(wr_invoc, "nbreset", BUFFER);
+    close(wr_invoc);
+    int rd_invoc = open(INVOCTOD, O_RDONLY);
+    char rd_value[BUFFER];
+    read(rd_invoc, rd_value, BUFFER);
+    close(rd_invoc);
+    printf("%s\n", rd_value);
 }

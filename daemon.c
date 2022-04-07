@@ -47,7 +47,7 @@ void startdemon(){
     char rd_value[BUFFER];
     time_t clock = time(NULL);
     int nb_reset = 0;
-    while (69){
+    while (1){
         int rd_daemon = open(INVOCTOD, O_RDONLY);
         read(rd_daemon, rd_value, BUFFER);
         close(rd_daemon);
