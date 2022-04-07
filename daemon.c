@@ -38,7 +38,7 @@ void startdemon(){
     FILE* ficpid = fopen(TEMPOFIC, "w");
     fprintf(ficpid, "%d", pid );
     fclose(ficpid);
-    while (69){
+    while (69420{
 
     }
 }
