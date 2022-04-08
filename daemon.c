@@ -44,27 +44,27 @@ void startdemon(){
         exit(-1);
     }
 
-    char rd_value[BUFFER];
+    char rd_value[TAILLE];
     time_t clock = time(NULL);
     int nb_reset = 0;
     while (1){
         int rd_daemon = open(INVOCTOD, O_RDONLY);
-        read(rd_daemon, rd_value, BUFFER);
+        read(rd_daemon, rd_value, TAILLE);
         close(rd_daemon);
         if(strcmp(rd_value, "date") == 0){
             int wr_daemon = open(INVOCTOD, O_WRONLY);
             time_t currentdate= time(NULL);
             struct tm date = *localtime(&currentdate);
-            char value[BUFFER];
+            char value[TAILLE];
             sprintf(value, "%d/%d/%d", date.tm_mday, date.tm_mon+1, date.tm_year + 1900);
-            write(wr_daemon, value, BUFFER);
+            write(wr_daemon, value, TAILLE);
             close(wr_daemon);
         }
         if(strcmp(rd_value, "timer") == 0){
             int wr_daemon = open(INVOCTOD, O_WRONLY);
-            char value[BUFFER];
+            char value[TAILLE];
             sprintf(value, "%ld", time(NULL) - clock);
-            write(wr_daemon, value, BUFFER);
+            write(wr_daemon, value, TAILLE);
             close(wr_daemon);
 
         }
@@ -74,9 +74,9 @@ void startdemon(){
         }
         if(strcmp(rd_value, "nbreset") == 0){
             int wr_daemon = open(INVOCTOD, O_WRONLY);
-            char value[BUFFER];
+            char value[TAILLE];
             sprintf(value, "%d", nb_reset);
-            write(wr_daemon, value, BUFFER);
+            write(wr_daemon, value, TAILLE);
             close(wr_daemon);
         }
     }

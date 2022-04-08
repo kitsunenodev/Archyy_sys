@@ -66,37 +66,37 @@ void state(){ //fontion qui fait apparaitre l'état du daemon
 
 void date(){
     int wr_invoc = open(INVOCTOD, O_WRONLY);
-    write(wr_invoc, "date", BUFFER);
+    write(wr_invoc, "date", TAILLE);
     close(wr_invoc);
     int rd_invoc = open(INVOCTOD, O_RDONLY);
-    char rd_value[BUFFER];
-    read(rd_invoc, rd_value, BUFFER);
+    char rd_value[TAILLE];
+    read(rd_invoc, rd_value, TAILLE);
     close(rd_invoc);
     printf("%s\n", rd_value);
 }
 
 void timer(){
     int wr_invoc = open(INVOCTOD, O_WRONLY);
-    write(wr_invoc, "timer", BUFFER);
+    write(wr_invoc, "timer", TAILLE);
     close(wr_invoc);
     int rd_invoc = open(INVOCTOD, O_RDONLY);
-    char rd_value[BUFFER];
-    read(rd_invoc, rd_value, BUFFER);
+    char rd_value[TAILLE];
+    read(rd_invoc, rd_value, TAILLE);
     close(rd_invoc);
     printf("%s\n", rd_value);
 }
 void resettimer(){
     int wr_invoc = open(INVOCTOD, O_WRONLY);
-    write(wr_invoc, "reset", BUFFER);
+    write(wr_invoc, "reset", TAILLE);
     close(wr_invoc);
 }
 void nombrerest(){
     int wr_invoc = open(INVOCTOD, O_WRONLY);
-    write(wr_invoc, "nbreset", BUFFER);
+    write(wr_invoc, "nbreset", TAILLE);
     close(wr_invoc);
     int rd_invoc = open(INVOCTOD, O_RDONLY);
-    char rd_value[BUFFER];
-    read(rd_invoc, rd_value, BUFFER);
+    char rd_value[TAILLE];
+    read(rd_invoc, rd_value, TAILLE);
     close(rd_invoc);
     printf("%s\n", rd_value);
 }
