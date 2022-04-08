@@ -35,7 +35,9 @@ void help(){
            "\n"
            "--resettimer\treset the timer\n"
            "\n"
-           "--nombrereset\t show how many time the timer of the actual instance of the daemon has been reset\n");
+           "--nombrereset\t show how many time the timer of the actual instance of the daemon has been reset\n"
+           "\n"
+           "--roll\t roll a random number between 1 and 6\n");
 
     exit(0);
 } 
