@@ -11,7 +11,7 @@
 int main(int argc,char* argv[]){
 
     if(argc != 2){
-        printf("Erreur, le nombre d'argument est incorect");
+        printf("Erreur, le nombre d'argument est incorect\n");
         exit(-1);
     }
     else{

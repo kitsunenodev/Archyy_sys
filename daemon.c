@@ -51,6 +51,7 @@ void startdemon(){
         int rd_daemon = open(INVOCTOD, O_RDONLY);
         read(rd_daemon, rd_value, TAILLE);
         close(rd_daemon);
+
         if(strcmp(rd_value, "date") == 0){
             int wr_daemon = open(INVOCTOD, O_WRONLY);
             time_t currentdate= time(NULL);
