@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Apr  7 17:35:49 2022
+# Make data base, printed on Fri Apr  8 15:04:58 2022
 
 # Variables
 
@@ -53,7 +53,7 @@ PATH = /home/pire/.vscode-server/bin/e18005f0f1b33c29e81d732535d8c0e47cafb0b5/bi
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-d865d57c-f116-4732-bee5-8faf9b552015.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-48314156-2811-4e7d-8004-386f5b6bdf41.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -75,7 +75,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = pire
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -140,8 +140,10 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu-20.04
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=65/1024=6%, Rehash=0, Collisions=4/90=4%
+# Load=66/1024=6%, Rehash=0, Collisions=4/91=4%
 
 # Pattern-specific Variable Values
 
@@ -149,9 +151,9 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Directories
 
-# . (device 2, inode 30117822508048753): 12 files, no impossibilities.
+# . (device 2, inode 30117822508048753): 14 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -188,7 +190,7 @@ daemon.o: daemon.c
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-07 17:32:44.6646528
+#  Last modified 2022-04-08 15:04:12.4273039
 #  File has been updated.
 #  Successfully updated.
 
@@ -196,13 +198,6 @@ build: programme clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-execute: programme clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 19):
-	./programme
 
 programme: main.o daemon.o invocateur.o
 #  Implicit rule search has not been done.
@@ -245,20 +240,20 @@ main.o: main.c
 	gcc -c main.c
 
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/37=0%
+# Load=13/1024=1%, Rehash=0, Collisions=0/34=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 23 / storage = 202 B / avg = 8 B
-# current buf: size = 8162 B / used = 202 B / count = 23 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 24 / storage = 230 B / avg = 9 B
+# current buf: size = 8162 B / used = 230 B / count = 24 / avg = 9 B
 
-# strcache performance: lookups = 45 / hit rate = 48%
+# strcache performance: lookups = 43 / hit rate = 44%
 # hash-table stats:
-# Load=23/8192=0%, Rehash=0, Collisions=1/45=2%
-# Finished Make data base on Thu Apr  7 17:35:49 2022
+# Load=24/8192=0%, Rehash=0, Collisions=1/43=2%
+# Finished Make data base on Fri Apr  8 15:04:58 2022
 
  
 make: *** No rule to make target 'all'.  Stop.

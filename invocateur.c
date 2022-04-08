@@ -100,3 +100,9 @@ void nombrerest(){
     close(rd_invoc);
     printf("%s\n", rd_value);
 }
+int rolled;
+int roll(){
+    srand((unsigned)time(NULL));
+    rolled = rand()%6 + 1;;
+    return rolled;
+}

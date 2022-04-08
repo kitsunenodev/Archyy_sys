@@ -22,5 +22,7 @@ void resettimer();
 
 void nombrerest();
 
+int roll();
+
 #endif //ARCHI_SYS_INVOCATEUR_H
 

@@ -56,6 +56,10 @@ int main(int argc,char* argv[]){
             nombrerest();
             exit(0);
         }
+        if(!strcmp(argv[1] , "--roll")){
+            printf("you rolled a %d \n",roll());
+            exit(0);
+        }
         else{
         printf("bad argument type --help for more informations\n");
         exit(-1);
